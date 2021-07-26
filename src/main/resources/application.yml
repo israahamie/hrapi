@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hr
+    username: postgres
+    password: jarvis23
+    driverCLassName: org.postgresql.Driver
+
+server:
+  port: 8080
