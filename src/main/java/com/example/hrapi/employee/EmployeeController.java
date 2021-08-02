@@ -1,10 +1,10 @@
 package com.example.hrapi.employee;
 
+import com.example.hrapi.address.AddressNotFoundException;
 import com.example.hrapi.employee.request.NewEmployeeRequest;
 import com.example.hrapi.employee.response.EmployeeResponse;
 import com.example.hrapi.employee.response.EmployeesResponse;
 import com.example.hrapi.shared.ResponseBody;
-import com.example.hrapi.shared.exception.AddressNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-@RequestMapping("/employees")
+@RequestMapping("/employee")
 @AllArgsConstructor
 @Log4j2
 public class EmployeeController {
@@ -126,7 +126,7 @@ public class EmployeeController {
      *                                  address key does not exist in the address table
      *                                  and is thus mot a valid reference to an address
      */
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<ResponseBody<EmployeeResponse>> addEmployee(@RequestBody NewEmployeeRequest newEmployeeRequest) {
         log.info("invoke addEmployee method, New Employee Request :{}", newEmployeeRequest);
         /*

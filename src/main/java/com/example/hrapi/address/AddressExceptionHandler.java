@@ -1,8 +1,7 @@
-package com.example.hrapi.shared.exceptionhandlers;
+package com.example.hrapi.address;
 
 import com.example.hrapi.shared.ResponseBody;
 import com.example.hrapi.shared.StatusCodesConstants;
-import com.example.hrapi.shared.exception.AddressNotFoundException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  */
 @RestControllerAdvice
 @Log4j2
-public class SharedAddressExceptionHandler {
+public class AddressExceptionHandler {
 
     @ExceptionHandler(AddressNotFoundException.class)
     protected ResponseEntity<Object> handleAddressNotFoundException(

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
  * implements DepartmentMapper interface, which defines the SQL definitions.
  */
 @RestController
-@RequestMapping("/departments")
+@RequestMapping("/department")
 @AllArgsConstructor
 @Log4j2
 public class DepartmentController {
@@ -62,7 +62,7 @@ public class DepartmentController {
      * @return a ResponseEntity containing the fields of the Department inserted into the database and the
      * status code of this request
      */
-    @PostMapping()
+    @PostMapping("/add")
     public ResponseEntity<ResponseBody<DepartmentResponse>> addDepartment(@RequestBody NewDepartmentRequest newDepartmentRequest) {
         log.info("invoke addDepartment method, New Department Request :{}", newDepartmentRequest);
         /*

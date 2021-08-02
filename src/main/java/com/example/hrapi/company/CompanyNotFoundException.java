@@ -1,4 +1,4 @@
-package com.example.hrapi.shared.exception;
+package com.example.hrapi.company;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

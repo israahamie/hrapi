@@ -1,12 +1,12 @@
 package com.example.hrapi.jobgrade;
 
+import com.example.hrapi.department.DepartmentNotFoundException;
+import com.example.hrapi.employee.EmployeeNotFoundException;
 import com.example.hrapi.jobgrade.request.NewJobGradeRequest;
 import com.example.hrapi.jobgrade.response.JobGradeResponse;
 import com.example.hrapi.jobgrade.response.JobGradesResponse;
+import com.example.hrapi.jobposition.PositionNotFoundException;
 import com.example.hrapi.shared.ResponseBody;
-import com.example.hrapi.shared.exception.DepartmentNotFoundException;
-import com.example.hrapi.shared.exception.EmployeeNotFoundException;
-import com.example.hrapi.shared.exception.PositionNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Israa Hamieh
  */
 @RestController
-@RequestMapping("/job-grades")
+@RequestMapping("/job-grade")
 @AllArgsConstructor
 @Log4j2
 public class JobGradeController {
@@ -130,7 +130,7 @@ public class JobGradeController {
      *                                     job_position key does not exist in the job_key table
      *                                     as a primary key and is thus not a valid key
      */
-    @PostMapping()
+    @PostMapping("/add")
     public ResponseEntity<ResponseBody<JobGradeResponse>> addJobGrade(@RequestBody NewJobGradeRequest newJobGradeRequest) throws GradeException {
         log.info("invoke addJobGrade method, New JobGrade Request :{}", newJobGradeRequest);
         /*

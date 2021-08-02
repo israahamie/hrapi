@@ -2,15 +2,15 @@ package com.example.hrapi.jobhistory;
 
 import com.example.hrapi.company.Company;
 import com.example.hrapi.company.CompanyMapper;
+import com.example.hrapi.company.CompanyNotFoundException;
 import com.example.hrapi.employee.Employee;
 import com.example.hrapi.employee.EmployeeMapper;
+import com.example.hrapi.employee.EmployeeNotFoundException;
 import com.example.hrapi.jobgrade.GradeException;
 import com.example.hrapi.jobhistory.response.JobHistoryResponse;
 import com.example.hrapi.jobposition.JobPosition;
 import com.example.hrapi.jobposition.JobPositionMapper;
-import com.example.hrapi.shared.exception.CompanyNotFoundException;
-import com.example.hrapi.shared.exception.EmployeeNotFoundException;
-import com.example.hrapi.shared.exception.PositionNotFoundException;
+import com.example.hrapi.jobposition.PositionNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;

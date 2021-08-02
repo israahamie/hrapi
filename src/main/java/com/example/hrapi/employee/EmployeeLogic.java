@@ -3,8 +3,8 @@ package com.example.hrapi.employee;
 
 import com.example.hrapi.address.Address;
 import com.example.hrapi.address.AddressMapper;
+import com.example.hrapi.address.AddressNotFoundException;
 import com.example.hrapi.employee.response.EmployeeResponse;
-import com.example.hrapi.shared.exception.AddressNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;

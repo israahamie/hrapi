@@ -1,13 +1,13 @@
 package com.example.hrapi.jobhistory;
 
+import com.example.hrapi.company.CompanyNotFoundException;
+import com.example.hrapi.employee.EmployeeNotFoundException;
 import com.example.hrapi.jobgrade.GradeException;
 import com.example.hrapi.jobhistory.request.NewJobHistoryRequest;
 import com.example.hrapi.jobhistory.response.JobHistoriesResponse;
 import com.example.hrapi.jobhistory.response.JobHistoryResponse;
+import com.example.hrapi.jobposition.PositionNotFoundException;
 import com.example.hrapi.shared.ResponseBody;
-import com.example.hrapi.shared.exception.CompanyNotFoundException;
-import com.example.hrapi.shared.exception.EmployeeNotFoundException;
-import com.example.hrapi.shared.exception.PositionNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Israa Hamieh
  */
 @RestController
-@RequestMapping("/job-histories")
+@RequestMapping("/job-history")
 @AllArgsConstructor
 @Log4j2
 public class jobHistoryController {
@@ -68,7 +68,7 @@ public class jobHistoryController {
      *                                   job_position key does not exist in the job_key table
      *                                   as a primary key and is thus not a valid key
      */
-    @PostMapping()
+    @PostMapping("/add")
     public ResponseEntity<ResponseBody<JobHistoryResponse>> addJobHistory(@RequestBody NewJobHistoryRequest newJobHistoryRequest) throws GradeException {
         log.info("invoke addJobHistory method, New JobHistory Request :{}", newJobHistoryRequest);
         /*

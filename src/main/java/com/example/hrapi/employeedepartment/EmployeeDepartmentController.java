@@ -1,11 +1,11 @@
 package com.example.hrapi.employeedepartment;
 
+import com.example.hrapi.department.DepartmentNotFoundException;
+import com.example.hrapi.employee.EmployeeNotFoundException;
 import com.example.hrapi.employeedepartment.request.NewEmployeeDepartmentRequest;
 import com.example.hrapi.employeedepartment.response.EmployeeDepartmentResponse;
+import com.example.hrapi.jobposition.PositionNotFoundException;
 import com.example.hrapi.shared.ResponseBody;
-import com.example.hrapi.shared.exception.DepartmentNotFoundException;
-import com.example.hrapi.shared.exception.EmployeeNotFoundException;
-import com.example.hrapi.shared.exception.PositionNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Israa Hamieh
  */
 @RestController
-@RequestMapping("/employee-departments")
+@RequestMapping("/employee-department")
 @AllArgsConstructor
 @Log4j2
 public class EmployeeDepartmentController {
@@ -66,7 +66,7 @@ public class EmployeeDepartmentController {
      *                                     job_position key does not exist in the job_key table
      *                                     as a primary key and is thus not a valid key
      */
-    @PostMapping()
+    @PostMapping("/add")
     public ResponseEntity<ResponseBody<EmployeeDepartmentResponse>> addEmployeeDepartment
     (@RequestBody NewEmployeeDepartmentRequest newEmployeeDepartmentRequest) {
 

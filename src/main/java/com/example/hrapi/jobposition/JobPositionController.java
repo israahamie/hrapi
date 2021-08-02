@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Israa Hamieh
  */
 @RestController
-@RequestMapping("/job-positions")
+@RequestMapping("/job-position")
 @AllArgsConstructor
 @Log4j2
 public class JobPositionController {
@@ -68,7 +68,7 @@ public class JobPositionController {
      * @return a ResponseEntity containing the fields of the JobPosition
      * inserted into the database and the status code of this request
      */
-    @PostMapping()
+    @PostMapping("/add")
     public ResponseEntity<ResponseBody<JobPositionResponse>> addJobPosition(@RequestBody NewJobPositionRequest newJobPositionRequest) {
         log.info("invoke addJobPosition method, New JobPosition Request :{}", newJobPositionRequest);
         /*

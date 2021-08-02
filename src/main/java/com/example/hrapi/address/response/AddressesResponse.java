@@ -18,5 +18,5 @@ import java.util.List;
 @Setter
 @ToString
 public class AddressesResponse extends BaseResponse {
-    List<Address> addresses;
+    private List<Address> addresses;
 }

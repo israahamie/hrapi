@@ -12,6 +12,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class NewAddressRequest {
-    public String country;
-    public String city;
+    private String country;
+    private String city;
 }

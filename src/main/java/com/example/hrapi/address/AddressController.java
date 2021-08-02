@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Israa Hamieh
  */
 @RestController
-@RequestMapping("/addresses")
+@RequestMapping("/address")
 @AllArgsConstructor
 @Log4j2
 public class AddressController {
@@ -85,7 +85,7 @@ public class AddressController {
      * @return a response entity containing the details of the Address
      * inserted as well as status code
      */
-    @PostMapping()
+    @PostMapping("/add")
     public ResponseEntity<ResponseBody<AddressResponse>> addAddress(@RequestBody NewAddressRequest newAddressRequest) {
         log.info("invoke addAddress method, New Address Request :{}", newAddressRequest);
         /*

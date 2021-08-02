@@ -1,10 +1,10 @@
 package com.example.hrapi.company;
 
+import com.example.hrapi.address.AddressNotFoundException;
 import com.example.hrapi.company.request.NewCompanyRequest;
 import com.example.hrapi.company.response.CompaniesResponse;
 import com.example.hrapi.company.response.CompanyResponse;
 import com.example.hrapi.shared.ResponseBody;
-import com.example.hrapi.shared.exception.AddressNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/companies")
+@RequestMapping("/company")
 @AllArgsConstructor
 @Log4j2
 public class CompanyController {
@@ -85,7 +85,7 @@ public class CompanyController {
      * @throws AddressNotFoundException in case the foreign
      *                                  * key of the address is not found in the address table
      */
-    @PostMapping()
+    @PostMapping("/add")
     public ResponseEntity<ResponseBody<CompanyResponse>> addCompany(@RequestBody NewCompanyRequest newCompanyRequest) {
         log.info("invoke addCompany method, New Company Request :{}", newCompanyRequest);
         /*

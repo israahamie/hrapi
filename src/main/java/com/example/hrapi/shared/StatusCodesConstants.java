@@ -1,7 +1,15 @@
 package com.example.hrapi.shared;
 
-import com.example.hrapi.shared.exception.*;
-import com.example.hrapi.shared.exceptionhandlers.*;
+import com.example.hrapi.address.AddressExceptionHandler;
+import com.example.hrapi.address.AddressNotFoundException;
+import com.example.hrapi.company.CompanyExceptionHandler;
+import com.example.hrapi.company.CompanyNotFoundException;
+import com.example.hrapi.department.DepartmentExceptionHandler;
+import com.example.hrapi.department.DepartmentNotFoundException;
+import com.example.hrapi.employee.EmployeeExceptionHandler;
+import com.example.hrapi.employee.EmployeeNotFoundException;
+import com.example.hrapi.jobposition.PositionExceptionHandler;
+import com.example.hrapi.jobposition.PositionNotFoundException;
 
 /**This class stores the status codes in case of bad requests made by the client
  * The program recognizes the exception type based on these status codes*/
@@ -16,7 +24,7 @@ public final class StatusCodesConstants {
      * primary key in the address table. This means that the client attempted to
      * reference an address with an invalid key
      * @see AddressNotFoundException
-     * @see SharedAddressExceptionHandler
+     * @see AddressExceptionHandler
      */
 
     public static final String invalidAddressCode = "3020";
@@ -27,7 +35,7 @@ public final class StatusCodesConstants {
      * primary key in the company table. This means that the client attempted to
      * reference a company with an invalid key
      * @see CompanyNotFoundException
-     * @see SharedCompanyExceptionHandler
+     * @see CompanyExceptionHandler
      */
 
     public static final String invalidCompanyCode = "3030";
@@ -38,7 +46,7 @@ public final class StatusCodesConstants {
      * primary key in the department table. This means that the client attempted to
      * reference a department with an invalid key
      * @see DepartmentNotFoundException
-     * @see SharedDepartmentExceptionHandler
+     * @see DepartmentExceptionHandler
      */
 
     public static final String invalidDepartmentCode = "3040";
@@ -49,7 +57,7 @@ public final class StatusCodesConstants {
      * primary key in the employee table. This means that the client attempted to
      * reference an employee with an invalid key
      * @see EmployeeNotFoundException
-     * @see SharedEmployeeExceptionHandler
+     * @see EmployeeExceptionHandler
      */
 
     public static final String invalidEmployeeCode = "3050";
@@ -62,8 +70,16 @@ public final class StatusCodesConstants {
      * primary key in the job_position table. This means that the client attempted to
      * reference a job position with an invalid key
      * @see PositionNotFoundException
-     * @see SharedPositionExceptionHandler
+     * @see PositionExceptionHandler
      */
 
     public static final String invalidPositionCode = "3060";
+
+
+    /**The invalid grade code is used in the response entity in case the client
+     * tries to create a new entry with a grade outside the range between 1 and 10
+     * @see com.example.hrapi.jobgrade.GradeException
+     */
+
+    public static final String invalidGradeCode = "3070";
 }
