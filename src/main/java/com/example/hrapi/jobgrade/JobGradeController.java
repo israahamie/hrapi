@@ -55,7 +55,7 @@ public class JobGradeController {
      *                    to which grade belongs to
      * @return a JobGrade object
      */
-    @GetMapping("/employee-id")
+    @GetMapping("/employee")
     public ResponseEntity<ResponseBody<JobGradeResponse>> getJobGradeByEmployee(@RequestParam Long employee_id) {
         log.info("Invoked getJobGradeByEmployee method, employee id: {}", employee_id);
         JobGradesResponse response = new JobGradesResponse();

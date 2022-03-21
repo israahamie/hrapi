@@ -31,6 +31,11 @@ public class AddressController {
     private AddressMapper addressMapper;
     private AddressLogic addressLogic;
 
+    public AddressController() {
+
+    }
+
+
     /**
      * method gets the address by matching it to its id
      *
